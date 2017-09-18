@@ -1,0 +1,29 @@
+doctype html
+html
+  head
+    title #{title}
+    link(rel='stylesheet', href='/stylesheets/style.css')
+    //- link(href='/stylesheets/css/bootstrap.min.css', rel='stylesheet')
+  body
+    .container
+      img.logo(src="/images/no.png", alt="")
+      nav
+        ul
+          li
+            a(href="/") Home
+          li
+            a(href="/posts/add") Add Post
+          li
+            a(href="/categories/add") Add Category
+            
+      !=messages()
+        block content
+        footer
+          p Blog &copy: 2017
+
+  script(src='https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js')
+  script.
+      window.jQuery || document.write('<script src="javascripts/js/vendor/jquery.min.js"><\\/script>')
+  script(src='../javascripts/js/bootstrap.min.js')
+    // IE10 viewport hack for Surface/desktop Windows 8 bug
+  script(src='../javascripts/js/ie10-viewport-bug-workaround.js')

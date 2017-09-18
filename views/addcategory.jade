@@ -1,0 +1,13 @@
+block content
+    h1 #{title}
+    ul.errors
+        if errors
+            each error, i in errors
+                li.alert.alert-danger #{error.msg}
+
+    form(action="/categories/add", method="post", enctype="multipart/form-data")
+        .form-group
+            label(for="title") Title
+            input.form-control(name='title', type='text')
+
+        input.btn.btn-default(name="submit", type="submit", value="save")        
